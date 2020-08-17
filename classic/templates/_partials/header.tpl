@@ -22,68 +22,68 @@
     * @copyright Since 2007 PrestaShop SA and Contributors
     * @license https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
     *}
-    {block name='header_banner'}
+    {* {block name='header_banner'}
         <div class="header-banner">
             {hook h='displayBanner'}
         </div>
-    {/block}
+    {/block} *}
 
-    {block name='header_nav'}
-        <nav class="header-nav">
-            <div class="container">
-                <div class="row">
-                    <div class="hidden-sm-down">
-                        <div class="col-md-5 col-xs-12">
-                            {hook h='displayNav1'}
-                        </div>
-                        <div class="col-md-7 right-nav">
-                            {hook h='displayNav2'}
-                        </div>
+    {* {block name='header_nav'}
+    <nav class="header-nav">
+        <div class="container">
+            <div class="row">
+                <div class="hidden-sm-down">
+                    <div class="col-md-5 col-xs-12">
+                        {hook h='displayNav1'}
                     </div>
-                    <div class="hidden-md-up text-sm-center mobile">
-                        <div class="float-xs-left" id="menu-icon">
-                            <i class="material-icons d-inline">&#xE5D2;</i>
-                        </div>
-                        <div class="float-xs-right" id="_mobile_cart"></div>
-                        <div class="float-xs-right" id="_mobile_user_info"></div>
-                        <div class="top-logo" id="_mobile_logo"></div>
-                        <div class="clearfix"></div>
+                    <div class="col-md-7 right-nav">
+                        {hook h='displayNav2'}
                     </div>
                 </div>
+                <div class="hidden-md-up text-sm-center mobile">
+                    <div class="float-xs-left" id="menu-icon">
+                        <i class="material-icons d-inline">&#xE5D2;</i>
+                    </div>
+                    <div class="float-xs-right" id="_mobile_cart"></div>
+                    <div class="float-xs-right" id="_mobile_user_info"></div>
+                    <div class="top-logo" id="_mobile_logo"></div>
+                    <div class="clearfix"></div>
+                </div>
             </div>
-        </nav>
-    {/block}
+        </div>
+    </nav>
+    {/block} *}
 
     {block name='header_top'}
-        <div class="header-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
-                        {* LOGO *}
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
+                    {* LOGO *}
+                    <div id="logo" class="row">
                         {if $page.page_name == 'index'}
-                            <h1>
-                                <a href="{$urls.base_url}">
-                                    <img class="logo img-responsive" src="{$urls.img_ps_url}{$shop.logo}" alt="{$shop.name}" loading="lazy">
-                                </a>
-                            </h1>
+                        <a href="{$urls.base_url}">
+                            <img class="logo img-responsive" src="{$urls.img_ps_url}{$shop.logo}" alt="{$shop.name}" loading="lazy">
+                        </a>
                         {else}
-                            <a href="{$urls.base_url}">
-                                <img class="logo img-responsive" src="{$urls.img_ps_url}{$shop.logo}" alt="{$shop.name}" loading="lazy">
-                            </a>
+                        <a href="{$urls.base_url}">
+                            <img class="logo img-responsive" src="{$urls.img_ps_url}{$shop.logo}" alt="{$shop.name}" loading="lazy">
+                        </a>
                         {/if}
                     </div>
-                    <div class="col-md-10 col-sm-12 position-static">
-                        <div class="row">
-                            {hook h='displayTop'}
-                            <div class="col-md-6">
-                                <div class='row'>
-                                    <div class="col-md-12 text-right">
-                                        {widget name='ps_searchbar'}
-                                        {widget name='ps_customersignin'}
-                                        {widget name='ps_shoppingcart'}
-                                    </div>
+                </div>
+                <div class="col-md-10 col-sm-12 position-static">
+                    <div class="row">
+                        {hook h='displayTop'}
+                        <div class="col-md-6">
+                            <div id="extra-menu" class='row'>
+                                <div class="col-md-12 text-right">
+                                    {widget name='ps_searchbar'}
+                                    {widget name='ps_customersignin'}
+                                    {widget name='ps_shoppingcart'}
                                 </div>
                             </div>
+                            </>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -99,4 +99,4 @@
             </div>
         </div>
         {hook h='displayNavFullWidth'}
-    {/block}
+        {/block}

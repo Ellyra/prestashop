@@ -53,9 +53,21 @@ $(document).ready(function () {
 });
 window.handleCloseModal = () => {
   const cartModal = document.getElementById("cartModalDetails");
-  const desktopCart = document.getElementById("_desktop_cart");
+  const offcanvas = document.getElementById("off-canvas");
   cartModal.classList.toggle("hidden-modal");
-  desktopCart.classList.toggle("modal-is-visible");
+  offcanvas.style.display = "none";
+};
+window.handleOpenModal = () => {
+  const cartModal = document.getElementById("cartModalDetails");
+  const offcanvas = document.getElementById("off-canvas");
+  cartModal.classList.toggle("hidden-modal");
+  offcanvas.style.display = "block";
+};
+const offcanvas = document.getElementById("off-canvas");
+offcanvas.onclick = function () {
+  const cartModal = document.getElementById("cartModalDetails");
+  offcanvas.style.display = "none";
+  cartModal.classList.toggle("hidden-modal");
 };
 
 /* $("html").click(function () {
