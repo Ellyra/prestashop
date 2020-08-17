@@ -124,13 +124,13 @@ small.value {
   padding: 0.5rem 1rem;
   &:focus {
     background-color: white;
-    outline: 0.1875rem solid $brand-primary;
+    /*     outline: 0.1875rem solid $brand-primary; */
     color: $gray-darker;
   }
 }
 .input-group {
   &.focus {
-    outline: 0.1875rem solid $brand-primary;
+    /* outline: 0.1875rem solid $brand-primary; */
   }
   .form-control:focus {
     outline: none;
