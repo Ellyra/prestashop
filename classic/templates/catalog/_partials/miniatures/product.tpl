@@ -48,9 +48,17 @@
                             {/block}
                             <form id="form-quick-add" action="{$urls.pages.cart}" method="POST">
                                 <input type="hidden" text="text" value="{$product.id}" name="id_product">
-                                <button id="btn-quick-add" class="btn btn-primary add-to-cart" data-button-action="add-to-cart" type="submit">
+                                {* <button id="btn-quick-add" class="btn btn-primary add-to-cart" data-button-action="add-to-cart" type="submit">
                                     <i class="material-icons search">&#xe8f6;</i>
-                                </button>
+                                </button> *}
+                                <div class="product-add-to-cart">
+                                    <div class="add">
+                                        <button class="btn btn-primary add-to-cart" data-button-action="add-to-cart" type="submit" {if !$product.add_to_cart_url} disabled {/if}>
+                                            <i class="material-icons shopping-cart">&#xE547;</i>
+                                        </button>
+                                    </div>
+                                    {hook h='displayProductActions' product=$product}
+                                </div>
                             </form>
                             {*
                             {block name='product_variants'}
@@ -60,6 +68,12 @@
                             {/block} *}
                         </div>
                     </div>
+                    {* <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
+                        <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id">
+                        {block name='product_add_to_cart'}
+                            {include file='catalog/_partials/product-add-to-cart.tpl'}
+                        {/block}
+                    </form> *}
                     <div class="product-description">
                         {block name='product_name'}
                             {if $page.page_name == 'index'}
@@ -68,37 +82,37 @@
                                 <h2 class="h3 product-title" itemprop="name"><a href="{$product.url}" itemprop="url" content="{$product.url}">{$product.name|truncate:30:'...'}</a></h2>
                             {/if}
                         {/block}
-
-                    {block name='product_price_and_shipping'}
-                    {if $product.show_price}
-                    <div class="product-price-and-shipping">
-                        {if $product.has_discount}
-                        {hook h='displayProductPriceBlock' product=$product type="old_price"}
-
-                        <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>
-                        {if $product.discount_type === 'percentage'}
-                        <span class="discount-percentage discount-product">{$product.discount_percentage}</span>
-                        {elseif $product.discount_type === 'amount'}
-                        <span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
-                        {/if}
-                        {/if}
-                        {hook h='displayProductPriceBlock' product=$product type="before_price"}
-                        <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
-                        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="invisible">
-                            <meta itemprop="priceCurrency" content="{$currency.iso_code}" />
-                            <meta itemprop="price" content="{$product.price_amount}" />
-                        </div>
-                        {hook h='displayProductPriceBlock' product=$product type='unit_price'}
-                        {hook h='displayProductPriceBlock' product=$product type='weight'}
+    
+                        {block name='product_price_and_shipping'}
+                            {if $product.show_price}
+                                <div class="product-price-and-shipping">
+                                    {if $product.has_discount}
+                                        {hook h='displayProductPriceBlock' product=$product type="old_price"}
+                
+                                        <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>
+                                        {if $product.discount_type === 'percentage'}
+                                            <span class="discount-percentage discount-product">{$product.discount_percentage}</span>
+                                        {elseif $product.discount_type === 'amount'}
+                                            <span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
+                                        {/if}
+                                    {/if}
+                                    {hook h='displayProductPriceBlock' product=$product type="before_price"}
+                                    <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
+                                    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="invisible">
+                                        <meta itemprop="priceCurrency" content="{$currency.iso_code}" />
+                                        <meta itemprop="price" content="{$product.price_amount}" />
+                                    </div>
+                                    {hook h='displayProductPriceBlock' product=$product type='unit_price'}
+                                    {hook h='displayProductPriceBlock' product=$product type='weight'}
+                                </div>
+                            {/if}
+                        {/block}
+                        {block name='product_reviews'}
+                            {hook h='displayProductListReviews' product=$product}
+                        {/block}
                     </div>
-                    {/if}
-                    {/block}
-                    {block name='product_reviews'}
-                    {hook h='displayProductListReviews' product=$product}
-                    {/block}
+                    {include file='catalog/_partials/product-flags.tpl'}
                 </div>
-                {include file='catalog/_partials/product-flags.tpl'}
-            </div>
-        </article>
-    </div>
+            </article>
+        </div>
     {/block}
