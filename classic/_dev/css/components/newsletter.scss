@@ -7,12 +7,15 @@
     .input-wrapper {
       overflow: hidden;
     }
-    input[type=email] {
+    input[type="email"] {
       padding: 11px;
       width: 100%;
+      border: none;
+      border-bottom: 1px solid $gray;
+      background-color: #d9d9d9;
       &:focus {
-        border: 3px $brand-primary solid;
-        padding: 8px 8px 9px;
+        /*         border: 3px $brand-primary solid; */
+        /* padding: 8px 8px 9px; */
         outline: 0;
       }
     }
@@ -35,4 +38,10 @@
     margin-bottom: 1.563rem;
     padding: 1.563rem 1.25rem;
   }
+}
+#btn-footer-newsletter {
+  box-shadow: none;
+  margin-left: 1em;
+  padding: 0;
+  cursor: pointer;
 }

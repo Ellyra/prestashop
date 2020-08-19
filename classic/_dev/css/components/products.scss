@@ -271,46 +271,64 @@
     }
   }
 }
-.tabs {
-  /* @include box-shadow; */
-  background: #d9d9d9;
-  width: 1170px;
-  margin: auto;
-  padding: $medium-space $large-space;
-  .tab-pane {
-    padding-top: $medium-space;
-  }
-  .nav-tabs {
-    background: #d9d9d9;
-    display: flex;
-    justify-content: center;
-    border: none;
-    border-bottom: none;
-    .nav-link {
-      color: $gray;
+.container-tabs {
+  background-color: #ffffff;
+  .tabs {
+    /* @include box-shadow; */
+    /* background: #ffffff; */
+    width: 1170px;
+    margin: auto;
+    padding: $medium-space $large-space;
+    .tab-pane {
+      padding-top: $medium-space;
+    }
+    .nav-tabs {
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
       border: none;
-      &.active {
+      border-bottom: none;
+      .nav-link {
+        color: $gray;
         border: none;
-        background: #d9d9d9;
-        border-bottom: none;
-        color: black;
+        &.active {
+          border: none;
+          background: #ffffff;
+          border-bottom: none;
+          color: black;
+        }
+        &:hover {
+          color: black;
+          border: none;
+          border-bottom: none;
+        }
       }
-      &:hover {
-        color: black;
-        border: none;
-        border-bottom: none;
+      .nav-item {
+        float: left;
+        margin-bottom: -0.125rem;
       }
     }
-    .nav-item {
-      float: left;
-      margin-bottom: -0.125rem;
+    .product-description {
+      display: flex;
+      align-items: center;
+    }
+    .product_features {
+      display: flex;
+      align-items: center;
+      .product_feature-content {
+        margin-left: 120px;
+      }
     }
   }
-  .product-description {
-    display: flex;
-    align-items: center;
+  .border-div {
+    width: 1170px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: solid 1px #ebebeb;
   }
 }
+
 .product-cover {
   margin-bottom: $medium-space;
   margin-left: 125px;
@@ -612,6 +630,10 @@
 }
 .product-variants {
   display: flex;
+  align-items: center;
+  div:nth-child(2) {
+    margin: 0 1.25rem;
+  }
   > .product-variants-item {
     margin: $medium-space 0;
     select {
@@ -627,18 +649,6 @@
       margin-left: 0;
       margin-top: 0;
     }
-  }
-}
-#product-variants-Size {
-  margin: 0 15px 0 0;
-  span {
-    display: none;
-  }
-}
-#product-variants-Color {
-  margin: 0 15px 0 15px;
-  .control-label {
-    display: none;
   }
 }
 .product-flags {
