@@ -1,4 +1,5 @@
 .carousel {
+  height: 860px;
   /*   box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.15); */
   margin-bottom: 1.5rem;
   .direction {
@@ -22,9 +23,17 @@
   }
   .carousel-inner {
     /* height: 340px; */
+    height: 100% !important;
   }
   .carousel-item {
     height: 100%;
+    .featured-img {
+      background-attachment: fixed;
+      background-position: center center !important;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+    }
     img {
       width: 100%;
       max-width: 100%;

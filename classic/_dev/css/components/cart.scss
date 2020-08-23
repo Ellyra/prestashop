@@ -1,5 +1,17 @@
 .cart-grid {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  .card-block {
+    width: 1170px;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 120px;
+  }
+  .cart-container {
+    width: 1170px;
+    margin: auto;
+    text-align: center;
+  }
 }
 .cart-items {
   margin-bottom: 0;

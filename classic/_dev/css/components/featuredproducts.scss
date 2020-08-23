@@ -139,12 +139,16 @@ $product-description-height: 70px;
       width: 54px;
       display: inline-block;
     }
-    #btn-quick-add {
+    .product-add-to-cart {
+      margin: 0;
+    }
+    .btn {
       color: $gray;
       font-size: $base-font-size;
       background-color: white;
       box-shadow: none;
       padding: 0.5rem 0.5rem;
+      cursor: pointer;
       i {
         font-size: 36px;
         color: $gray;

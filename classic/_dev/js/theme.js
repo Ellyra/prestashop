@@ -22,34 +22,34 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  */
-import 'expose-loader?Tether!tether';
-import 'bootstrap/dist/js/bootstrap.min';
-import 'flexibility';
-import 'bootstrap-touchspin';
-import 'jquery-touchswipe';
-import './selectors';
+import "expose-loader?Tether!tether";
+import "bootstrap/dist/js/bootstrap.min";
+import "flexibility";
+import "bootstrap-touchspin";
+import "jquery-touchswipe";
+import "./selectors";
 
-import './responsive';
-import './checkout';
-import './customer';
-import './listing';
-import './product';
-import './cart';
+import "./responsive";
+import "./checkout";
+import "./customer";
+import "./listing";
+import "./product";
+import "./cart";
 
-import prestashop from 'prestashop';
-import EventEmitter from 'events';
-import DropDown from './components/drop-down';
-import Form from './components/form';
-import ProductMinitature from './components/product-miniature';
-import ProductSelect from './components/product-select';
-import TopMenu from './components/top-menu';
+import prestashop from "prestashop";
+import EventEmitter from "events";
+import DropDown from "./components/drop-down";
+import Form from "./components/form";
+import ProductMinitature from "./components/product-miniature";
+import ProductSelect from "./components/product-select";
+import TopMenu from "./components/top-menu";
 
-import './lib/bootstrap-filestyle.min';
-import './lib/jquery.scrollbox.min';
+import "./lib/bootstrap-filestyle.min";
+import "./lib/jquery.scrollbox.min";
 
-import './components/block-cart';
-import $ from 'jquery';
-import 'jquery-migrate';
+import "./components/block-cart";
+import $ from "jquery";
+import "jquery-migrate";
 
 // "inherit" EventEmitter
 for (const i in EventEmitter.prototype) {
@@ -57,7 +57,7 @@ for (const i in EventEmitter.prototype) {
 }
 
 $(document).ready(() => {
-  const dropDownEl = $('.js-dropdown');
+  const dropDownEl = $(".js-dropdown");
   const form = new Form();
   const topMenuEl = $('.js-top-menu ul[data-depth="0"]');
   const dropDown = new DropDown(dropDownEl);
@@ -72,13 +72,13 @@ $(document).ready(() => {
 
   $('.carousel[data-touch="true"]').swipe({
     swipe(event, direction, distance, duration, fingerCount, fingerData) {
-      if (direction == 'left') {
-        $(this).carousel('next');
+      if (direction == "left") {
+        $(this).carousel("next");
       }
-      if (direction == 'right') {
-        $(this).carousel('prev');
+      if (direction == "right") {
+        $(this).carousel("prev");
       }
     },
-    allowPageScroll: 'vertical',
+    allowPageScroll: "vertical",
   });
 });
