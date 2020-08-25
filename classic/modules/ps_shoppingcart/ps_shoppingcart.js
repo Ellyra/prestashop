@@ -70,6 +70,11 @@ offcanvas.onclick = function () {
   cartModal.classList.toggle("hidden-modal");
 };
 
+/* const modalBackdropAlex = document.getElementsByClassName("modal-backdrop");
+modalBackdropAlex.onclick = function () {
+  console.log("here");
+}; */
+
 /* $("html").click(function () {
   const cartModal = document.getElementById("cartModalDetails");
   const desktopCart = document.getElementById("_desktop_cart");

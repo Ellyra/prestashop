@@ -30,10 +30,24 @@
         <div class="container-fluid container-slider">
             {widget name="ps_imageslider"}
         </div>
-        {block name='page_content'}
-        {block name='hook_home'}
-        {$HOOK_HOME nofilter}
-        {/block}
-        {/block}
+        <div class="priamry">
+            <div class="shop">
+                <div class="parallaxe">
+                    <div class="col-md-6">
+                        <h1>simple & minimalist</h1>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac erat
+                            dales vitae non est. In vitae egestas enim, in pretium nulla. Phasellus nisl erat, cons
+                            equat et turpis a, mollis gravida est raesent et.</p>
+                    </div>
+                </div>
+            </div>
+            {block name='page_content'}
+            {block name='hook_home'}
+            {$HOOK_HOME nofilter}
+            {/block}
+            {/block}
+        </div>
     </section>
     {/block}

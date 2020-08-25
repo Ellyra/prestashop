@@ -54,6 +54,7 @@
             <section id="wrapper">
                 {hook h="displayWrapperTop"}
                 <div class="container-all-page">
+                    <div class="under-header"></div>
                     {block name='breadcrumb'}
                     {include file='_partials/breadcrumb.tpl'}
                     {/block}

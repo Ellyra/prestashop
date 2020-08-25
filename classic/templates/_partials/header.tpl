@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="col-md-10 col-sm-12 position-static">
-                    <div class="row">
+                    <div id="top-container" class="row">
                         {hook h='displayTop'}
                         <div class="col-md-6">
                             <div id="extra-menu" class='row'>
