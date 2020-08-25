@@ -164,10 +164,12 @@
       .row {
         #_desktop_logo {
           #logo {
-            min-height: 110px;
+            min-height: 120px;
             align-items: center;
-            margin: 5px 0px;
           }
+        }
+        #top-container {
+          align-items: center;
         }
       }
     }
@@ -190,10 +192,20 @@
   .top-menu-link {
     margin-left: $medium-space;
   }
+  #container-main-menu {
+    #_desktop_top_menu {
+      margin-bottom: 0 !important;
+      #top-menu {
+        margin-bottom: 0 !important;
+        .dropdown-item {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
   #extra-menu {
-    min-height: 110px;
+    min-height: 120px;
     align-items: center;
-    margin: 5px 0px;
   }
 }
 .shop {
@@ -210,7 +222,7 @@
     margin-bottom: 1em;
   }
 }
-:not(#index) {
+body:not(#index) {
   .under-header {
     height: 120px;
   }
@@ -219,6 +231,17 @@
     background-color: #d9d9d9;
     &.sticky {
       background-color: white !important;
+      height: 90px;
+      #_desktop_logo {
+        #logo {
+          min-height: 90px;
+          margin: 0;
+        }
+      }
+      #extra-menu {
+        min-height: 90px;
+        margin: 0;
+      }
     }
   }
 }

@@ -11,6 +11,18 @@
     width: 1170px;
     margin: auto;
     text-align: center;
+    box-shadow: none;
+    border: none;
+    .header-cart-container {
+      text-align: left;
+    }
+    #table {
+      display: flex;
+      background-color: $gray-lighter;
+      p {
+        margin-top: 1em;
+      }
+    }
   }
 }
 .cart-items {
@@ -83,6 +95,12 @@
 }
 /** CART BODY **/
 .cart-grid-body {
+  padding-left: 0;
+  padding-right: 0;
+  > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
   a.label {
     &:hover {
       color: $brand-primary;
@@ -95,7 +113,7 @@
     }
   }
   .cart-overview {
-    padding: 1rem;
+    /* padding: 1rem; */
   }
   margin-bottom: 0.75rem;
 }
@@ -229,15 +247,44 @@
     margin-bottom: 0;
   }
 }
+.product-line-grid {
+  display: flex;
+  border-bottom: solid 1px $gray-light;
+  .qty {
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+    .input-group {
+      box-shadow: none;
+    }
+  }
+}
 /** CONTENT LEFT **/
 .product-line-grid-left {
+  display: flex;
+  padding: 2em 0 2em 0;
+
+  .product-line-info {
+    padding-left: 2em;
+    .product-line-info {
+      text-align: left;
+      padding-left: 0 !important;
+    }
+  }
   img {
     max-width: 100%;
   }
 }
 /** CONTENT BODY **/
 .product-line-grid-body {
+  display: flex;
+  padding: 2em 0 2em 0;
+  .price {
+    color: black;
+    font-weight: normal;
+  }
   > .product-line-info {
+    padding-left: 25px;
     > .label {
       padding: 0;
       line-height: inherit;
@@ -257,16 +304,32 @@
     }
   }
 }
-/** CONTENT LEFT **/
+/** CONTENT RIGHT **/
 .product-line-grid-right {
+  display: flex;
+  justify-content: center;
+  padding: 2em 0;
   .cart-line-product-actions,
   .product-price {
     color: $gray-darker;
-    line-height: 36px;
+    /*     line-height: 36px; */
     .remove-from-cart {
       color: $gray-darker;
       display: inline-block;
       margin-top: 0.3125rem;
+    }
+  }
+}
+
+/** REMOVE **/
+.product-line-grid-remove {
+  display: flex;
+  justify-content: center;
+  padding: 2em 0;
+  .material-icons {
+    color: $gray;
+    &:hover {
+      color: black;
     }
   }
 }
