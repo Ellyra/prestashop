@@ -229,18 +229,46 @@ body:not(#index) {
   #header {
     position: fixed;
     background-color: #d9d9d9;
+    transition: all 0.5s;
+    #_desktop_logo {
+      transition: all 0.5s;
+      #logo {
+        transition: all 0.5s;
+        a {
+          transition: all 0.5s;
+          img {
+            a {
+              transition: all 0.5s;
+            }
+          }
+        }
+      }
+    }
+    #container-main-menu {
+      transition: all 0.5s;
+      div {
+        transition: all 0.5s;
+      }
+      ul {
+        transition: all 0.5s;
+      }
+      li {
+      }
+    }
+    #extra-menu {
+      transition: all 0.5s;
+    }
     &.sticky {
       background-color: white !important;
       height: 90px;
+
       #_desktop_logo {
         #logo {
           min-height: 90px;
-          margin: 0;
         }
       }
       #extra-menu {
         min-height: 90px;
-        margin: 0;
       }
     }
   }
@@ -271,6 +299,9 @@ body:not(#index) {
   .breadcrumb {
     background: transparent;
     padding: 0;
+    width: 1170px;
+    margin: auto;
+    padding: 60px 15px;
     &[data-depth="1"] {
       display: none;
     }
@@ -303,11 +334,6 @@ body:not(#index) {
   #wrapper {
     box-shadow: none;
     background-color: #d9d9d9;
-    .breadcrumb {
-      margin-left: 240px;
-      margin-bottom: 60px;
-      margin-top: 60px;
-    }
   }
 }
 /*** MAIN ***/

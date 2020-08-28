@@ -51,21 +51,24 @@
                             </li>
                         {/foreach}
                     </ul>
+                </div>
+                <div class="footer-cart-hover">
                     <div class="cart-subtotals">
                         {foreach from=$cart.subtotals item="subtotal"}
                             <div class="{$subtotal.type}">
-                                <span class="label">{$subtotal.label}</span>
-                                <span class="value">{$subtotal.value}</span>
+                                <div class="col-md-9"><span class="label">{$subtotal.label}</span></div>
+                                <div class="col-md-3"><span class="value">{$subtotal.value}</span></div>
+    
                             </div>
                         {/foreach}
                     </div>
-                    <div class="cart-total">
+                    {* <div class="cart-total">
                         <span class="label">{$cart.totals.total.label}</span>
                         <span class="value">{$cart.totals.total.value}</span>
-                    </div>
+                    </div> *}
                     <div class="cart-wishlist-action">
-                        <a class="cart-wishlist-viewcart" href="{$cart_url}">view cart</a>
-                        <a class="cart-wishlist-checkout" href="{$urls.pages.order}">{l s='Check Out' d='Shop.Theme.Actions'}</a>
+                        <a class="btn btn-primary cart-wishlist-viewcart" href="{$cart_url}">View cart</a>
+                        <a class="btn btn-primary cart-wishlist-checkout" href="{$urls.pages.order}">{l s='Check Out' d='Shop.Theme.Actions'}</a>
                     </div>
                 </div>
             </div>

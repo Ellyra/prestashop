@@ -11,12 +11,16 @@ body {
   color: $gray-darker;
   line-height: 1.25em;
 }
+
 ul {
   list-style: none;
   padding-left: 0;
 }
+a {
+  color: black;
+}
 a:hover {
-  color: $brand-primary;
+  color: $gray-darker;
   text-decoration: none;
 }
 p {
@@ -63,10 +67,13 @@ p {
 }
 .btn-primary,
 .btn-secondary {
-  @include box-shadow-light;
-  text-transform: uppercase;
-  font-weight: 600;
+  /* @include box-shadow-light; */
+  /* text-transform: uppercase; */
+  background: black;
+  font-weight: 100;
   padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  color: white;
   .material-icons {
     margin-right: $small-space;
   }
@@ -76,17 +83,17 @@ p {
   background-color: #f7f7f7;
   text-transform: lowercase;
   color: $gray;
-  box-shadow: 0.0625rem 0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0.0625rem 0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.1); */
   padding: 0.25rem;
   margin: 0.25rem 0;
-  font-weight: 400;
+  font-weight: 100;
   font-size: $font-size-sm;
   .material-icons {
     font-size: $base-font-size;
   }
   &:hover {
-    box-shadow: 0.0625rem 0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.2);
-    border: $input-btn-border-width solid rgba(35, 35, 35, 0.2);
+    /* box-shadow: 0.0625rem 0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.2); */
+    /* border: $input-btn-border-width solid rgba(35, 35, 35, 0.2); */
   }
 }
 .btn-unstyle {
@@ -97,7 +104,7 @@ p {
   &:focus {
     outline: 0;
     .expand-more {
-      color: $brand-primary;
+      /* color: $brand-primary; */
     }
   }
 }
@@ -303,7 +310,7 @@ textarea {
   input[type="radio"] {
     &:checked + span {
       display: block;
-      background-color: $brand-primary;
+      background-color: $pourpre;
       width: 12px;
       height: 12px;
       border-radius: 50%;
@@ -467,4 +474,19 @@ textarea {
   min-height: calc(
     100% - (30px * 2)
   ); // 30px correspond to the default margin size from bootstrap 4.0.0-alpha.5 for modal-dialog class
+}
+
+a:focus,
+a:hover {
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: black;
+}
+.btn-primary:active {
+  background-color: black;
+}
+.btn-primary:focus {
+  box-shadow: none;
 }

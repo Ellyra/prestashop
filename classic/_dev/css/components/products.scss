@@ -484,7 +484,7 @@
     }
   }
   .product-name {
-    color: $brand-primary;
+    color: black;
     font-size: 1.125rem;
 
     @include media-breakpoint-down(sm) {
@@ -512,7 +512,7 @@
       }
       &.cart-products-count {
         font-size: 1rem;
-        color: $btn-tertiary-color;
+        color: $gray;
         font-weight: 600;
       }
       &.product-tax {

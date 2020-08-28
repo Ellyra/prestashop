@@ -25,82 +25,91 @@
     {extends file=$layout}
 
     {block name='content'}
-
-    <section id="main">
-        <div class="cart-grid row">
-            <div class="card-block">
-                <h1 class="h1">{l s='Cart' d='Shop.Theme.Checkout'}</h1>
-                <p>FAIRE UN NAV ICI</p>
+    
+        <section id="main">
+            <div class="cart-grid row">
+                <div class="card-block">
+                    <h1 class="h1">{l s='Cart' d='Shop.Theme.Checkout'}</h1>
+                    <p>FAIRE UN NAV ICI</p>
+                </div>
+                <!-- Left Block: cart product informations & shpping -->
+                <div class="cart-container">
+                    <div class="header-cart-container">
+                        <h1> Your cart items </h1>
+                    </div>
+                    <div class="cart-grid-body col-xs-12 col-md-12 col-lg-12">
+                        <div id="table" class="col-xs-12 col-md-12 col-lg-12">
+                            <div class="col-xs-6 col-md-6 col-lg-6">
+                                <p> Product </p>
+                            </div>
+                            <div class="col-xs-1 col-md-1 col-lg-1">
+                                <p> Price </p>
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-lg-2">
+                                <p> Quantity </p>
+                            </div>
+                            <div class="col-xs-1 col-md-1 col-lg-1">
+                                <p> Total </p>
+                            </div>
+                        </div>
+                        <!-- cart products detailed -->
+                        <div class="card cart-container">
+    
+                            {*
+                            <hr class="separator"> *}
+                            {block name='cart_overview'}
+                                {include file='checkout/_partials/cart-detailed.tpl' cart=$cart}
+                            {/block}
+                        </div>
+                        {*------ CONTINUE SHPPOING ---------*}
+                        {block name='continue_shopping'}
+                            <div class="continu-shopping">
+                                <a class="btn btn-primary" href="{$urls.pages.index}">
+                                    <i class="material-icons">arrow_back</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
+                                </a>
+                            </div>
+                        {/block}
+    
+                        <!-- shipping informations -->
+                        {block name='hook_shopping_cart_footer'}
+                            {hook h='displayShoppingCartFooter'}
+                        {/block}
+                    </div>
+    
+                    <!-- Right Block: cart subtotal & cart total -->
+                    <div class="cart-grid-right col-xs-12 col-md-12 col-lg-12">
+                        {block name='cart_coupon'}
+                            <div class="cart_coupon col-md-4">
+        
+                            </div>
+                        {/block}
+                        {block name='calculate-shipping'}
+                            <div class="calculate-shipping col-md-4">
+                                {block name='hook_reassurance'}
+                                    {hook h='displayReassurance'}
+                                {/block}
+                            </div>
+                        {/block}
+                        {block name='cart_summary'}
+                            <div class="cart-summary col-md-4">
+                                <div class="cart-summary-inner">
+        
+                                    {block name='hook_shopping_cart'}
+                                        {hook h='displayShoppingCart'}
+                                    {/block}
+        
+                                    {block name='cart_totals'}
+                                        {include file='checkout/_partials/cart-detailed-totals.tpl' cart=$cart}
+                                    {/block}
+                                </div>
+                                {block name='cart_actions'}
+                                    {include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart}
+                                {/block}
+                            </div>
+                        {/block}
+    
+                    </div>
+                </div>
             </div>
-            <!-- Left Block: cart product informations & shpping -->
-            <div class="cart-container">
-                <div class="header-cart-container">
-                    <h1> Your cart items </h1>
-                </div>
-                <div class="cart-grid-body col-xs-12 col-md-12 col-lg-12">
-                    <div id="table" class="col-xs-12 col-md-12 col-lg-12">
-                        <div class="col-xs-6 col-md-6 col-lg-6">
-                            <p> Product </p>
-                        </div>
-                        <div class="col-xs-1 col-md-1 col-lg-1">
-                            <p> Price </p>
-                        </div>
-                        <div class="col-xs-2 col-md-2 col-lg-2">
-                            <p> Quantity </p>
-                        </div>
-                        <div class="col-xs-1 col-md-1 col-lg-1">
-                            <p> Total </p>
-                        </div>
-                    </div>
-                    <!-- cart products detailed -->
-                    <div class="card cart-container">
-
-                        {*
-                        <hr class="separator"> *}
-                        {block name='cart_overview'}
-                        {include file='checkout/_partials/cart-detailed.tpl' cart=$cart}
-                        {/block}
-                    </div>
-
-                    {block name='continue_shopping'}
-                    <a class="label" href="{$urls.pages.index}">
-                        <i class="material-icons">chevron_left</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
-                    </a>
-                    {/block}
-
-                    <!-- shipping informations -->
-                    {block name='hook_shopping_cart_footer'}
-                    {hook h='displayShoppingCartFooter'}
-                    {/block}
-                </div>
-
-                <!-- Right Block: cart subtotal & cart total -->
-                <div class="cart-grid-right col-xs-12 col-lg-4">
-
-                    {block name='cart_summary'}
-                    <div class="card cart-summary">
-
-                        {block name='hook_shopping_cart'}
-                        {hook h='displayShoppingCart'}
-                        {/block}
-
-                        {block name='cart_totals'}
-                        {include file='checkout/_partials/cart-detailed-totals.tpl' cart=$cart}
-                        {/block}
-
-                        {block name='cart_actions'}
-                        {include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart}
-                        {/block}
-
-                    </div>
-                    {/block}
-
-                    {block name='hook_reassurance'}
-                    {hook h='displayReassurance'}
-                    {/block}
-
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
     {/block}

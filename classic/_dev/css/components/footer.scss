@@ -12,7 +12,7 @@
 .account-list a {
   color: $gray;
   &:hover {
-    color: $brand-primary;
+    color: $pourpre;
   }
 }
 .blockcms-title,
@@ -47,7 +47,7 @@
       }
 
       &:hover {
-        background-color: $brand-primary;
+        background-color: $pourpre;
       }
       a {
         display: block;
@@ -148,8 +148,11 @@
     cursor: pointer;
     font-size: $font-size-sm;
     &:hover {
-      color: $brand-primary;
+      color: $pourpre;
     }
+  }
+  a:hover {
+    color: $pourpre;
   }
 }
 .links {

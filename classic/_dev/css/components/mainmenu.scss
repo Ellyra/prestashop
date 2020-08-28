@@ -1,6 +1,6 @@
 .top-menu {
   &[data-depth="1"] {
-    margin: 0.625rem;
+    /* margin: 0.625rem; */
   }
   a:not([data-depth="0"]) {
     display: block;
@@ -12,6 +12,7 @@
     color: $gray-darker;
     text-transform: uppercase;
     font-weight: 600;
+    padding: 1em !important;
   }
   a[data-depth="0"] {
     font-weight: 600;

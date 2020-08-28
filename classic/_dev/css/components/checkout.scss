@@ -1,21 +1,145 @@
-
-$carrierComponent: 'carrier';
+$carrierComponent: "carrier";
 
 body#checkout {
   color: $gray-darker;
+  .form-group {
+    margin-bottom: 0;
+    label {
+      margin-bottom: 0;
+      span {
+        margin: 0;
+      }
+    }
+    .btn {
+      margin: 1em 0em 1em 1em;
+      cursor: pointer;
+      background: black;
+      text-transform: none;
+    }
+  }
+  .nav-inline {
+    .nav-separator {
+      border: 1px solid;
+    }
+  }
   #header .header-nav {
     max-height: none;
-    padding: 0.9375rem 0;
+    /* padding: 0.9375rem 0; */
     border: none;
     margin-bottom: 0;
-    @include box-shadow;
+    transition: all 0.5s;
+    /* @include box-shadow; */
+    #_desktop_logo {
+      transition: all 0.5s;
+      #logo {
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+        transition: all 0.5s;
+        a {
+          transition: all 0.5s;
+        }
+      }
+    }
     .logo {
       max-height: 4.375rem;
       width: auto;
+      transition: all 0.5s;
     }
-    #_desktop_contact_link{
+    #_desktop_contact_link {
       #contact-link {
         margin-top: 0;
+      }
+    }
+  }
+  .container {
+    width: 1170px;
+    margin: auto;
+  }
+  .js-cart {
+    width: 100%;
+    .container-checkout {
+      border: 1px solid #ccc;
+      background-color: #f6f6f6;
+      .header-block-card {
+        display: flex;
+        align-items: center;
+        margin: 1em 2em;
+        border-bottom: 1px solid #ccc;
+        div {
+          padding: 0;
+        }
+        div:last-child {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+      .media {
+        .product-info {
+          display: flex;
+          align-items: center;
+          div:last-child {
+            display: flex;
+            justify-content: flex-end;
+          }
+          div {
+            display: flex;
+            align-items: center;
+          }
+          .product-quantity {
+            padding-left: 1em;
+          }
+          .product-price {
+            color: black !important;
+          }
+        }
+      }
+      .cart-summary-subtotals-container {
+        padding: 0;
+        .cart-summary-line {
+          padding: 0;
+          display: flex;
+          margin: 1em 2em;
+          border-bottom: 1px solid #ccc;
+          div {
+            padding: 0;
+            margin-bottom: 1em;
+          }
+          div:last-child {
+            span {
+              color: $pourpre;
+            }
+          }
+        }
+      }
+      .cart-summary-totals {
+        padding: 0;
+        .cart-summary-line {
+          padding: 0;
+          display: flex;
+          margin: 1em 2em;
+          div {
+            padding: 0;
+            margin-bottom: 1em;
+          }
+          div:last-child {
+            span {
+              color: $pourpre;
+            }
+          }
+        }
+      }
+    }
+    .form-footer {
+      .btn {
+        background-color: #000;
+        font-weight: 100;
+        padding: 1em;
+        width: 100%;
+        box-shadow: none;
+        text-transform: none;
+        margin-top: 1em;
+        cursor: pointer;
       }
     }
   }
@@ -27,7 +151,7 @@ body#checkout {
     }
   }
   a:hover {
-    color: #1a8196;
+    color: $pourpre;
   }
   section#content {
     margin-bottom: 1.563rem;
@@ -36,10 +160,10 @@ body#checkout {
     min-height: 100%;
   }
   section.checkout-step {
-    @include box-shadow;
+    /* @include box-shadow; */
     background-color: white;
-    border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
-    padding: 0.9375rem;
+    /* border-bottom: 1px rgba(0, 0, 0, 0.25) solid; */
+    /* padding: 0.9375rem; */
     &:last-child {
       border: 0;
     }
@@ -49,7 +173,7 @@ body#checkout {
       margin-bottom: 0;
     }
     .content {
-      padding: 0 2.313rem;
+      /* padding: 0 2.313rem; */
     }
     .step-edit {
       text-transform: lowercase;
@@ -118,8 +242,8 @@ body#checkout {
     }
     .default-input {
       min-width: 40%;
-      &[name=address1],
-      &[name=address2] {
+      &[name="address1"],
+      &[name="address2"] {
         min-width: 60%;
       }
     }
@@ -173,7 +297,7 @@ body#checkout {
       border: 3px solid transparent;
       &.selected {
         background: white;
-        border: $brand-primary 3px solid;
+        /* border: $brand-primary 3px solid; */
       }
     }
     .address-alias {
@@ -229,15 +353,15 @@ body#checkout {
     }
     .delivery-options {
       > .row {
-        border-right: .1rem solid darken($gray-lighter, 20%);
+        border-right: 0.1rem solid darken($gray-lighter, 20%);
       }
       .delivery-option {
         background: $gray-lighter;
         padding: 0.9375rem 0;
         margin-bottom: 0.9375rem;
         min-height: 80px;
-        &, 
-        label > .row, 
+        &,
+        label > .row,
         .carrier {
           display: flex;
           align-items: center;
@@ -247,7 +371,7 @@ body#checkout {
         label {
           text-align: inherit;
           margin-bottom: 0;
-          
+
           .#{$carrierComponent} {
             margin-left: 0;
 
@@ -288,6 +412,15 @@ body#checkout {
     }
     .forgot-password {
       margin-left: 14.38rem;
+    }
+    .form-control {
+      background-color: white;
+      color: black;
+      padding: 1em;
+      border: 1px solid #ccc;
+      &:focus {
+        border-color: #ccc;
+      }
     }
   }
   .additional-information {
@@ -387,7 +520,8 @@ body#checkout {
       }
     }
   }
-  #gift_message, #delivery{
+  #gift_message,
+  #delivery {
     max-width: 100%;
     border-color: $gray-darker;
     textarea {
@@ -418,7 +552,7 @@ body#checkout {
       &.links {
         .row > [class^="col"] {
           width: auto;
-        } 
+        }
       }
     }
   }
@@ -455,8 +589,8 @@ body#checkout {
     tr {
       height: $large-space;
       td {
-        padding: .5rem;
-        font-size: .875rem;
+        padding: 0.5rem;
+        font-size: 0.875rem;
         &:last-child {
           text-align: right;
         }
@@ -479,9 +613,9 @@ body#checkout {
   }
   .image {
     img {
-        width: 100%;
-        border: 1px solid gray-lighter;
-        margin-bottom: 1rem;
+      width: 100%;
+      border: 1px solid gray-lighter;
+      margin-bottom: 1rem;
     }
   }
   .details {
@@ -502,7 +636,7 @@ body#checkout {
 }
 @include media-breakpoint-down(md) {
   .done {
-    margin-right: .625rem;
+    margin-right: 0.625rem;
     padding: 0;
   }
   body#checkout section.checkout-step .address-item {
@@ -534,7 +668,7 @@ body#checkout {
         padding-left: 0;
       }
     }
-  } 
+  }
 }
 
 @include media-breakpoint-down(sm) {
@@ -554,14 +688,14 @@ body#checkout {
       }
     }
     .form-group {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0;
     }
   }
   #order-items {
     border-right: 0;
     margin-bottom: 2.5rem;
     .card-title {
-      border-bottom: 1px solid $gray-light;
+      /* border-bottom: 1px solid $gray-light; */
       margin-bottom: 1rem;
       padding-bottom: 1rem;
     }
@@ -569,13 +703,10 @@ body#checkout {
       border-top-color: $gray-light;
     }
   }
-  .bold {
-    font-weight: bold;
-  }
   #order-details {
     padding-left: 0.9375rem;
     .card-title {
-      border-bottom: 1px solid $gray-light;
+      /* border-bottom: 1px solid $gray-light; */
       margin-bottom: 1rem;
       padding-bottom: 1rem;
     }
@@ -588,7 +719,7 @@ body#checkout {
         }
       }
     }
-  } 
+  }
 }
 
 @include media-breakpoint-down(xs) {
@@ -628,6 +759,53 @@ body#checkout {
     }
     .accept-cgv {
       display: block;
+    }
+  }
+}
+/***** order-confirmation *******/
+#order-confirmation {
+  #order-items {
+    border: none;
+  }
+  .confirmation_container {
+    width: 1170px;
+    margin: auto;
+    .card {
+      box-shadow: none;
+      border: none;
+    }
+    .order-confirmation-table {
+      .order-line {
+        .image {
+          img {
+            width: 80px !important;
+          }
+        }
+        .order-line-inner {
+          display: flex;
+        }
+      }
+      table {
+        tbody:first-child {
+          tr:first-child {
+            td:first-child {
+              padding: 0em 0em 1em 0em;
+            }
+          }
+        }
+        tr {
+          border-bottom: 1px solid #ccc;
+          td:first-child {
+            color: $gray;
+          }
+          td {
+            padding: 2em 0em;
+          }
+        }
+        .total-value {
+          background-color: white;
+        }
+      }
     }
   }
 }
