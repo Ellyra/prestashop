@@ -147,14 +147,109 @@
     box-shadow: 1px 1px 1px 1px $gray-light;
   }
 }
+#search_filters {
+  width: 1170px;
+  margin: auto;
+  #filters-container {
+    display: none;
+    &.filters-up {
+      opacity: 1;
+      display: flex;
+    }
+    a:hover {
+      color: $pourpre;
+    }
+  }
+  #Categories {
+    display: flex;
+    align-items: center;
+    .filter {
+      color: black;
+      &:hover {
+        color: $pourpre;
+      }
+    }
+    .filter-up {
+      color: $pourpre;
+    }
+    .button-container {
+      #filter {
+        /* transition: all 1s; */
+        &:hover {
+          color: $pourpre;
+        }
+        &:focus {
+          color: $pourpre;
+          text-decoration: none;
+        }
+        /* &:active {
+          color: $pourpre;
+        }  */
+      }
+    }
+
+    p {
+      display: none;
+    }
+    a {
+      font-size: 18px;
+    }
+  }
+  #Color,
+  #Size,
+  #Property,
+  #Composition,
+  #Brand,
+  #Dimension,
+  #Paper {
+    float: left;
+  }
+  .facet {
+    display: inline-block;
+    p {
+      overflow: unset !important;
+      width: 100%;
+    }
+    .facet-label {
+      a {
+        overflow: unset !important;
+        width: 100%;
+      }
+    }
+  }
+  #facet_Categories {
+    display: flex;
+    li:first-child {
+      label:first-child {
+        padding-left: 0;
+      }
+    }
+    label {
+      padding: 1em;
+      a {
+        width: 100%;
+        &:hover {
+          color: $pourpre;
+        }
+      }
+    }
+  }
+  .custom-checkbox {
+    display: none;
+  }
+  .magnitude {
+    display: none;
+  }
+}
 #search_filters,
 #search_filters_brands,
 #search_filters_suppliers {
-  @include box-shadow;
-  margin-bottom: 1.563rem;
+  /* @include box-shadow; */
+  /* margin-bottom: 1.563rem; */
   background: white;
-  padding: 1.563rem 1.25rem;
+  padding: 1em 1em;
   .facet {
+    padding: 1em;
     .collapse {
       display: block;
     }

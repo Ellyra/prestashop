@@ -336,6 +336,12 @@ body:not(#index) {
     background-color: #d9d9d9;
   }
 }
+#category {
+  #content-wrapper {
+    width: 1170px;
+    margin: auto;
+  }
+}
 /*** MAIN ***/
 #main {
   .page-header {
