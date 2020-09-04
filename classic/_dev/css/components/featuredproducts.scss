@@ -29,8 +29,8 @@ $product-description-height: 70px;
     height: 318px;
     width: $thumbnail-size;
     background: white;
-    &:hover,
-    &:focus {
+    .thumbnail-inner:hover,
+    .thumbnail-inner:focus {
       .highlighted-informations {
         right: 0px;
         display: inline-block;
@@ -67,15 +67,17 @@ $product-description-height: 70px;
       img {
         max-height: 100%;
         max-width: 100%;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
         /*         margin: auto; */
         transition: all 500ms;
         &.hover-img {
           opacity: 0;
+        }
+        &.hover-img {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
         }
       }
     }
@@ -147,7 +149,7 @@ $product-description-height: 70px;
       font-size: $base-font-size;
       background-color: white;
       box-shadow: none;
-      padding: 0.5rem 0.5rem;
+      padding: 0;
       cursor: pointer;
       i {
         font-size: 36px;

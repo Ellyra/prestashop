@@ -31,9 +31,19 @@
 @import "components/newsletter";
 @import "components/brands";
 @import "components/customer_sign_in";
+@use "@material/icon-button";
+button.btn.add::before {
+  font-family: "Material Icons";
+  content: "redeem";
+  font-size: 36px;
+  color: $gray;
+  margin: 0;
+}
+button.btn.add:hover::before {
+  color: #a42121;
+}
 
 /*** HEADER ***/
-
 #header {
   color: $gray;
   position: absolute;
@@ -208,6 +218,15 @@
     align-items: center;
   }
 }
+#blockcart-modal {
+  .modal-content {
+    .modal-header {
+      .close {
+        outline: none !important;
+      }
+    }
+  }
+}
 .shop {
   padding-top: 60px;
   padding-bottom: 120px;
@@ -337,6 +356,10 @@ body:not(#index) {
   }
 }
 #category {
+  .breadcrumb {
+    text-align: center !important;
+    font-size: 24px;
+  }
   #content-wrapper {
     width: 1170px;
     margin: auto;

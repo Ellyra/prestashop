@@ -39,6 +39,7 @@
                                     <img src="{$urls.no_picture_image.bySize.home_default.url}" loading="lazy" />
                                 </a>
                             {/if}
+                            {include file='catalog/_partials/product-flags.tpl'}
                         {/block}
                         <div class="highlighted-informations hidden-sm-down">
                             {block name='quick_view'}
@@ -47,33 +48,24 @@
                                 </a>
                             {/block}
                             <form id="form-quick-add" action="{$urls.pages.cart}" method="POST">
-                                <input type="hidden" text="text" value="{$product.id}" name="id_product">
-                                {* <button id="btn-quick-add" class="btn btn-primary add-to-cart" data-button-action="add-to-cart" type="submit">
-                                    <i class="material-icons search">&#xe8f6;</i>
-                                </button> *}
+                                <input type="hidden" value="{$product.id}" name="id_product">
+                                <input type="hidden" name="token" value="{$static_token}">
+                                {* <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id"> *}
+                                {* <input type="hidden" name="id_customization" value="{$product.id_customization}" id="product_customization_id"> *}
                                 <div class="product-add-to-cart">
                                     <div class="add">
-                                        <button class="btn btn-primary add-to-cart" data-button-action="add-to-cart" type="submit" {if !$product.add_to_cart_url} disabled {/if}>
-                                            <i class="material-icons shopping-cart">&#xE547;</i>
+                                        <button class="btn add bmd-btn-icon add-to-cart" data-button-action="add-to-cart" type="submit" {if !$product.add_to_cart_url} disabled {/if}>
+                                            {* <i class="mdc-icon-button material-icons shopping-cart">&#xE547;</i> *}
                                         </button>
+                                        {* <a rel="nofollow" class="btn add-to-cart" href="{$urls.pages.cart}" data-id-product="{$product.id}" data-token="{$static_token}">
+                                            <i class="material-icons shopping-cart">&#xE547;</i>
+                                        </a> *}
                                     </div>
                                     {hook h='displayProductActions' product=$product}
                                 </div>
                             </form>
-                            {*
-                            {block name='product_variants'}
-                                {if $product.main_variants}
-                                    {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
-                                {/if}
-                            {/block} *}
                         </div>
                     </div>
-                    {* <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
-                        <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id">
-                        {block name='product_add_to_cart'}
-                            {include file='catalog/_partials/product-add-to-cart.tpl'}
-                        {/block}
-                    </form> *}
                     <div class="product-description">
                         {block name='product_name'}
                             {if $page.page_name == 'index'}
@@ -106,12 +98,32 @@
                                     {hook h='displayProductPriceBlock' product=$product type='weight'}
                                 </div>
                             {/if}
+                            <div class="product-information-displayable">
+                                <div id="product-description-short-{$product.id}" class="product-description-short" itemprop="description">{$product.description_short nofilter}
+                                </div>
+                            </div>
+                            <div class="button-add-displayable">
+                                <form action="{$urls.pages.cart}" method="POST">
+                                    <input type="hidden" text="text" value="{$product.id}" name="id_product">
+                                    <input type="hidden" name="token" value="{$static_token}">
+                                    <div class="product-add-to-cart">
+                                        <div class="button-add">
+                                            <button class="btn btn-primary add-to-cart" data-button-action="add-to-cart" type="submit" {if !$product.add_to_cart_url} disabled {/if}>
+                                                Add to Cart
+                                            </button>
+                                        </div>
+                                        {hook h='displayProductActions' product=$product}
+                                    </div>
+                                </form>
+                            </div>
                         {/block}
                         {block name='product_reviews'}
                             {hook h='displayProductListReviews' product=$product}
                         {/block}
+    
                     </div>
-                    {include file='catalog/_partials/product-flags.tpl'}
+    
+    
                 </div>
             </article>
         </div>

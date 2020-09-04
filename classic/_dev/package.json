@@ -36,5 +36,9 @@
     "velocity-animate": "^1.2.3",
     "webpack": "^2.2.1",
     "webpack-sources": "^0.1.0"
+  },
+  "dependencies": {
+    "@material/icon-button": "^7.0.0",
+    "@material/ripple": "^7.0.0"
   }
 }

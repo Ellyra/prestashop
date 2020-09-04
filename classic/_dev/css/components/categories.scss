@@ -159,6 +159,9 @@
     a:hover {
       color: $pourpre;
     }
+    .facet {
+      float: left;
+    }
   }
   #Categories {
     display: flex;
@@ -173,7 +176,9 @@
       color: $pourpre;
     }
     .button-container {
-      #filter {
+      display: flex;
+      justify-content: flex-end;
+      a {
         /* transition: all 1s; */
         &:hover {
           color: $pourpre;
@@ -195,15 +200,7 @@
       font-size: 18px;
     }
   }
-  #Color,
-  #Size,
-  #Property,
-  #Composition,
-  #Brand,
-  #Dimension,
-  #Paper {
-    float: left;
-  }
+
   .facet {
     display: inline-block;
     p {
@@ -274,6 +271,58 @@
     padding-top: 0;
     .facet-label {
       margin-bottom: 0.3125rem;
+    }
+  }
+}
+
+/* CHANGEMENT DU MODE D'AFFICHAGE EN MODE LIST */
+#category {
+  .products {
+    &.list-up {
+      .thumbnail-container {
+        display: flex;
+        width: 1170px;
+        height: auto;
+        justify-content: space-between;
+        margin-bottom: 4em;
+        .thumbnail-inner {
+          height: auto;
+          width: 39%;
+          margin-bottom: 0;
+          img {
+            height: 480px;
+            width: 480px;
+          }
+        }
+        .button-add-displayable {
+          button {
+            display: block;
+            width: 220px;
+            padding: 0.8em 0;
+          }
+        }
+        .product-information-displayable {
+          display: block;
+        }
+        .product-description {
+          position: inherit;
+          width: 55%;
+          height: auto;
+          .product-title {
+            a {
+              font-size: 24px;
+            }
+          }
+          .product-price-and-shipping {
+            span {
+              font-size: 18px;
+            }
+          }
+          .product-information-displayable {
+            margin: 3em 0;
+          }
+        }
+      }
     }
   }
 }

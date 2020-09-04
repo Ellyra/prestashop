@@ -49,6 +49,15 @@
     }
   }
 }
+
+.button-add-displayable {
+  button {
+    display: none;
+  }
+}
+.product-information-displayable {
+  display: none;
+}
 .input-color {
   position: absolute;
   opacity: 0;
