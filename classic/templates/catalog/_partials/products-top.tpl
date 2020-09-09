@@ -34,15 +34,15 @@
             <div class="row sort-by-row">
 
                 {block name='sort_by'}
-                    {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
+                {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
                 {/block}
 
                 {if !empty($listing.rendered_facets)}
-                    <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
-                        <button id="search_filter_toggler" class="btn btn-secondary">
-                            {l s='Filter' d='Shop.Theme.Actions'}
-                        </button>
-                    </div>
+                <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
+                    <button id="search_filter_toggler" class="btn btn-secondary">
+                        {l s='Filter' d='Shop.Theme.Actions'}
+                    </button>
+                </div>
                 {/if}
             </div>
         </div>

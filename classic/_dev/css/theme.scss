@@ -365,6 +365,18 @@ body:not(#index) {
     margin: auto;
   }
 }
+#authentication {
+  .breadcrumb {
+    text-align: center;
+  }
+  #content-wrapper {
+    width: 1170px;
+    margin: auto;
+    a:hover {
+      color: $pourpre;
+    }
+  }
+}
 /*** MAIN ***/
 #main {
   .page-header {

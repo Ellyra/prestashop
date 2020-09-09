@@ -1,6 +1,5 @@
 /*** SOME GENERIC STYLES ***/
 @mixin customer-area-base-box {
-  @include box-shadow;
   background: white;
   padding: 1rem;
 }
@@ -42,6 +41,14 @@
         text-align: center;
       }
     }
+  }
+}
+.card {
+  border: none;
+}
+.register-form {
+  p {
+    text-align: center;
   }
 }
 #authentication {
@@ -93,7 +100,6 @@
 .page-authentication {
   #content {
     @include customer-area-base-box;
-    max-width: 640px;
     margin: 0 auto;
   }
 }
@@ -287,11 +293,24 @@
 }
 /*** My account landing page ***/
 .page-my-account {
+  .breadcrumb {
+    padding: 60px 0px;
+    text-align: center;
+    span {
+      font-size: 24px;
+    }
+  }
+  .page-header {
+    display: none;
+  }
   #content {
     .links {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
+      width: 1170px;
+      margin: auto;
+      padding-bottom: 60px;
       a {
         text-align: center;
         display: inline-block;
@@ -316,7 +335,7 @@
         &:hover {
           color: $gray-darker;
           i {
-            color: $brand-primary;
+            color: $pourpre;
           }
         }
       }

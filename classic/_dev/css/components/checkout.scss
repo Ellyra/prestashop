@@ -10,12 +10,6 @@ body#checkout {
         margin: 0;
       }
     }
-    .btn {
-      margin: 1em 0em 1em 1em;
-      cursor: pointer;
-      background: black;
-      text-transform: none;
-    }
   }
   .nav-inline {
     .nav-separator {
@@ -133,7 +127,6 @@ body#checkout {
     .form-footer {
       .btn {
         background-color: #000;
-        font-weight: 100;
         padding: 1em;
         width: 100%;
         box-shadow: none;
